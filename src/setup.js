@@ -15,20 +15,23 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
     slowMo: 100,
   });
   const page = await browser.newPage();
-  page.setViewport({
+  await page.setViewport({
     width: 1280,
     height: 960
   });
   // Setup - page 1
   let url = `${BASE_PATH}/setup/setupstart.action`;
+  console.log(`Goto page setup ${url}`);
   await page.goto(url);
   if (url == await page.evaluate(() => document.location.href)) {
     await page.click('.confluence-setup-choice-box-header');
     await page.click('#setup-next-button');
   }
+
   // Setup - page 2
   await page.waitFor(2000);
   url = `${BASE_PATH}/setup/evallicense.action`;
+  console.log(`wait page setup ${url}`);
   if (url == await page.evaluate(() => document.location.href)) {
     await page.click('#confLicenseString');
     //await page.keyboard.type(CONFLUENCE_LICENCE);
@@ -44,6 +47,7 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
   // Setup - page 3
   await page.waitFor(2000)
   url = `${BASE_PATH}/setup/setupusermanagementchoice-start.action`;
+  console.log(`wait page setup ${url}`);
   if (url == await page.evaluate(() => document.location.href)) {
     await page.click('#internal');
   }
@@ -51,6 +55,7 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
   // Setup - page 4
   await page.waitFor(2000);
   url = `${BASE_PATH}/setup/setupadministrator-start.action`;
+  console.log(`wait page setup ${url}`);
   if (url == await page.evaluate(() => document.location.href)) {
     await page.click('#fullName');
     await page.keyboard.type('Mr Admin');
@@ -66,9 +71,11 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
 
     await page.click('#setup-next-button');
   }
+
   // Setup - page 5
   await page.waitFor(2000);
   url = `${BASE_PATH}/setup/finishsetup.action`;
+  console.log(`wait page setup ${url}`);
   if (url == await page.evaluate(() => document.location.href)) {
     await page.click('#further-configuration');
   }
@@ -87,7 +94,7 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
 
   // go to addons
   // click on the gear
-  await page.waitFor(1000);
+  await page.waitFor(3000);
   console.log('click on gear');
   await page.click('#admin-menu-link > span');
 
@@ -96,53 +103,9 @@ AIUGyVYmdMHcs89VtPGv3rtCk3+psACFAiKiKYLaT+ISnNOEV5wvTmsIBgFX02gk`;
   await page.waitFor(1000);
   await page.click('#plugin-administration-link');
 
-  // password
-  console.log('Enter password');
-
-  await page.waitFor(1000);
-  // await  page.keyboard.type(USER.password);
-  await  page.keyboard.type('admin');
-
-  // confirm password
-  console.log('confirmr password');
-  await page.click('#authenticateButton');
-
-  // select System addons
-  console.log('select Systm addons');
-  await page.click('upm-manage-type');
-
-  // select System
-  console.log('select System');
-  await page.click('#upm-manage-type > div > p');
-
-
-  const systemSelection = await page.evaluate(() => {
-
-    let selectSystem = '';
-
-    const selectSpaceArray = document.querySelectorAll('#upm-manage-type-wrap');
-
-    selectSpaceArray.forEach((item, i) => {
-      console.log('item', item.textContent, 'indecx', i);
-      if (item.textContent == 'System') {
-        selectSystem = i;
-      }
-    });
-
-    console.log('selectSystem', selectSystem);
-    return selectSystem;
-  });
-
   await page.waitFor(3000);
 
-
-  // select Confluence Onboarding
-  // console.log('select confluence onboarding');
-
-
-  // click on disable button
-  // console.log('click on Disable');
-
+  //here it should be the plugin installation
 
   await page.screenshot({
     path: 'example.png'
