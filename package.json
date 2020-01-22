@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "start": "node ./src/setup.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node src/wizard-first-setup.js",
+    "test": "jest ./src/sample.spec.js"
   },
   "repository": {
     "type": "git",
@@ -12,7 +12,11 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "faker": "^4.1.0",
+    "jest": "^24.9.0",
+    "jest-puppeteer": "^4.4.0",
     "puppeteer": "^2.0.0"
   }
 }

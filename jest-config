@@ -1,0 +1,14 @@
+module.exports = {
+  verbose: true,
+  preset: "jest-puppeteer",
+  globals: {
+    BASE_URL: process.env.BASE_URL,
+    INSTANCE_USER: process.env.INSTANCE_USER,
+    INSTANCE_PASS: process.env.INSTANCE_PASS,
+    ADDON_URL: process.env.ADDON_URL,
+    TIMEOUT: 180000,
+  },
+  testMatch: ['**/test/**/*.test.js'],
+  globalSetup: './setup/global-setup.js',
+  reporters: ['default', 'jest-mocha-reporter']
+}
