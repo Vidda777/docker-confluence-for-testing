@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "start": "node ./src/setup.js ",
+    "wizard-setup": "node setup/wizard-first-setup.js",
     "test": "BASE_URL=http://localhost:8090/confluence jest ./src/setup.spec.js"
   },
   "repository": {
