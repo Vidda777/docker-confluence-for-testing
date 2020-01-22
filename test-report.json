@@ -1,0 +1,21 @@
+{
+  "stats": {
+    "tests": 0,
+    "passes": 0,
+    "failures": 0,
+    "duration": 689,
+    "start": "2020-01-22T10:08:23.258Z",
+    "end": "2020-01-22T10:08:23.947Z"
+  },
+  "failures": [
+    {
+      "title": "/Users/maria/Comalatech/e2eFinal/docker-confluence-for-testing/src/setup_spec_js",
+      "fullTitle": "/Users/maria/Comalatech/e2eFinal/docker-confluence-for-testing/src/setup_spec_js",
+      "duration": 0,
+      "errorCount": 1,
+      "error": "  \u001b[1m● \u001b[22mTest suite failed to run\n\n    Cannot find module './config.json' from 'setup.spec.js'\n\n    \u001b[0m \u001b[90m 1 | \u001b[39m\u001b[36mconst\u001b[39m puppeteer \u001b[33m=\u001b[39m require(\u001b[32m'puppeteer'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 2 | \u001b[39m\u001b[36mconst\u001b[39m {defaults} \u001b[33m=\u001b[39m require(\u001b[32m'jest-config'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 3 | \u001b[39m\u001b[36mconst\u001b[39m jsonConfig \u001b[33m=\u001b[39m require(\u001b[32m\"./config.json\"\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m   | \u001b[39m                   \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 4 | \u001b[39m\u001b[90m//let url = `${BASE_PATH}/setup/setupstart.action`;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 5 | \u001b[39mlet url2 \u001b[33m=\u001b[39m jsonConfig\u001b[33m.\u001b[39mbase_path\u001b[33m;\u001b[39m\u001b[0m\n    \u001b[0m \u001b[90m 6 | \u001b[39mdescribe(\u001b[32m'Setup'\u001b[39m\u001b[33m,\u001b[39m () \u001b[33m=>\u001b[39m {\u001b[0m\n\n      \u001b[2mat Resolver.resolveModule (\u001b[22mnode_modules/jest-resolve/build/index.js\u001b[2m:259:17)\u001b[22m\n      \u001b[2mat Object.<anonymous> (\u001b[22m\u001b[0m\u001b[36msrc/setup.spec.js\u001b[39m\u001b[0m\u001b[2m:3:20)\u001b[22m\n"
+    }
+  ],
+  "passes": [],
+  "skipped": []
+}
